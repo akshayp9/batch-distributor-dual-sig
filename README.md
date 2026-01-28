@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# Batch Distributor V2 – Dual Signature (EIP-712)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **secure, production-ready dual-signature batch distribution system** for ERC-20 tokens and native assets.
 
-Currently, two official plugins are available:
+This project enables:
+- **Off-chain batch approval** by a Submitter
+- **On-chain verification and execution** by a Verifier/Executor
+- Strong replay protection using **EIP-712 typed data**
+- Full auditability via `batchId` and emitted events
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Designed for **ops-grade payout flows**, treasury automation, and enterprise-grade Web3 applications.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+- 🔐 **Dual-signature authorization**
+  - Submitter signs batch off-chain (no gas)
+  - Verifier executes batch on-chain
+- 🧾 **EIP-712 typed signatures** (safe, deterministic, auditable)
+- 🔁 **Replay protection**
+  - Unique `batchId`
+  - Expiring `deadline`
+- 🪙 **ERC-20 token distribution**
+  - Token whitelist (USDT, IGNET, extendable)
+- ⛽ **Gas-efficient batching**
+- 🛑 **Pausable + role-based access**
+- 🧪 Production-safe (stack-safe, IR-ready)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏗 Architecture Overview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
