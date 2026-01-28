@@ -42,10 +42,10 @@ export default function App() {
       "0x2222222222222222222222222222222222222222",
     ];
 
-    // USDT = 6 decimals
+    // USDT = 18 decimals
     const amounts = [
-      parseUnits("1", 6),
-      parseUnits("2", 6),
+      parseUnits("1", 18),
+      parseUnits("2", 18),
     ];
 
     const deadline = Math.floor(Date.now() / 1000) + 3600;
@@ -145,7 +145,7 @@ export default function App() {
         <p>
           ✅ Tx Hash:{" "}
           <a
-            href={`https://bscscan.com/tx/${txHash}`}
+            href={`https://testnet.bscscan.com/tx/${txHash}`}
             target="_blank"
           >
             {txHash}
