@@ -104,11 +104,7 @@ verifier signature matches msg.sender
 
 batch is not expired or replayed
 
-📦 Deployment (BSC Mainnet)
-Component	Address
-BatchDistributorV2	0x219144e08F6a91451332a324717562301de363ad
-USDT	0x55E2BC7f5295293649967aB75e5dF7A5745E6205
-IGNET	0x427245a96F7d33A29aD3B5011458C669c375A8Cf
+
 🧪 Example Frontend Flow
 
 1️⃣ Submitter connects wallet
